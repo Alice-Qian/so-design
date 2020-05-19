@@ -1,0 +1,24 @@
+.alert {
+  margin-bottom: 16px;
+  position: relative;
+  padding: 15px 15px 14px 64px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5715;
+  border-radius: 2px;
+  color: $white;
+  .alert-close-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: $black;
+  }
+  p {
+    line-height: 10px;
+  }
+}
+.alert-success {
+  background-color: $green;
+  border: 1px solid $green;
+}

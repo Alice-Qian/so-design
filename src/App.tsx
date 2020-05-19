@@ -1,20 +1,37 @@
 import React from 'react';
+import './styles/index.scss';
 import './App.scss';
-import { useState, useEffect } from 'react'
-import Hello from './component/Hello'
+import Button from './component/Button'
+import Alert from './component/Alert'
 
 function App() {
-  const [count] = useState(0)
-  const [message] = useState('test')
-
+  const test = () => {
+    console.log(111)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit{count}
-        </p>
-        <Hello message={message}></Hello>
-      </header>
+      <Button
+        btnType="primary"
+        disabled={false}
+      >
+        primary button
+    </Button>
+      <Button
+        btnType="danger"
+        disabled={false}
+      >
+        danger button
+    </Button>
+      <Button
+        btnType="link"
+        disabled={false}
+        href="https://www.baidu.com"
+        target="_blank"
+      >
+        link button
+    </Button>
+      <Alert title="111" description="hahhah"></Alert>
+      <Alert title="111" closable description="hahhah" onClose={test}></Alert>
     </div >
   );
 }
