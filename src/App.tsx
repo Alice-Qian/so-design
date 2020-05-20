@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import './styles/index.scss';
 import './App.scss';
-import Button from './component/Button'
-import Alert from './component/Alert'
+import Button from './components/Button'
+import Alert from './components/Alert'
 
 const App: FC = () => {
   const test = () => {
@@ -31,7 +31,7 @@ const App: FC = () => {
         link button
     </Button>
       <Alert title="111" description="hahhah"></Alert>
-      <Alert title="111" alertType="default" closable description="hahhah" onClose={test}></Alert>
+      <Alert title="111" type="warning" closable description="hahhah" onClose={test}></Alert>
     </div >
   );
 }
