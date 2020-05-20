@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './styles/index.scss';
 import './App.scss';
 import Button from './component/Button'
 import Alert from './component/Alert'
 
-function App() {
+const App: FC = () => {
   const test = () => {
     console.log(111)
   }
@@ -15,7 +15,7 @@ function App() {
         disabled={false}
       >
         primary button
-    </Button>
+      </Button>
       <Button
         btnType="danger"
         disabled={false}
@@ -31,7 +31,7 @@ function App() {
         link button
     </Button>
       <Alert title="111" description="hahhah"></Alert>
-      <Alert title="111" closable description="hahhah" onClose={test}></Alert>
+      <Alert title="111" alertType="default" closable description="hahhah" onClose={test}></Alert>
     </div >
   );
 }
