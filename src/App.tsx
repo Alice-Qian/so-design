@@ -4,6 +4,7 @@ import './App.scss';
 import Button from './components/Button'
 import Alert from './components/Alert'
 
+
 const App: FC = () => {
   const test = () => {
     console.log(111)

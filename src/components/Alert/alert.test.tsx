@@ -10,22 +10,26 @@ const closeProps: AlertProps = {
   title: "test",
   description: "This is some info about the test",
   type: "success",
-  closable: false,
+  closable: true,
   onClose: jest.fn()
 }
 
-describe('test alert component',  () => {
-  it('should render correct default alert',async () => {
-    const { getByText, container, queryByText } = render(<Alert {...defaultProps} />);
+describe('test alert component', () => {
+  it('should render correct default alert', async () => {
+    const { container, queryByText } = render(<Alert {...defaultProps} />);
     expect(container.querySelector(".alert")).toHaveClass("alert-default");
     expect(queryByText('test')).toBeInTheDocument()
-    fireEvent.click(getByText('times'));
-    expect(defaultProps.onClose).toHaveBeenCalled()
-    await wait(()=>{
-      expect(queryByText("Test")).not.toBeInTheDocument();
-    })
   })
-  it('should render closable alert', () => {
-
+  it('should render closable alert', async () => {
+    const { getByTestId, getByText, container, queryByText } = render(<Alert {...closeProps} />);
+    expect(container.querySelector(".alert")).toHaveClass("alert-success");
+    expect(queryByText('test')).toBeInTheDocument()
+    // 模拟点击关闭图标
+    fireEvent.click(getByTestId('icon'));
+    expect(closeProps.onClose).toHaveBeenCalled();
+    // 测试点击关闭图标后，是否隐藏Alert组件
+    await wait(() => {
+      expect(queryByText("test")).not.toBeInTheDocument();
+    });
   })
 })

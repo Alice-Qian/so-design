@@ -19,7 +19,7 @@ const Alert: FC<AlertProps> = (props) => {
   const classes = classNames('alert', className, {
     [`alert-${type}`]: type,
   })
-  const handleClose = () => {
+  const handleClose = (e: React.MouseEvent) => {
     setAlertStatus(false)
     if (onClose) {
       onClose()
@@ -30,7 +30,7 @@ const Alert: FC<AlertProps> = (props) => {
       {alertStatus &&
         <div className={classes} >
           {
-            closable && (<span className="alert-close-icon" onClick={handleClose}>
+            closable && (<span className="alert-close-icon" onClick={handleClose} data-testid="icon">
               <Icon size="xs" icon="times" />
             </span>)
           }
