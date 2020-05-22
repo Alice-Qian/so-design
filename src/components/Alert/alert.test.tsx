@@ -21,7 +21,7 @@ describe('test alert component', () => {
     expect(queryByText('test')).toBeInTheDocument()
   })
   it('should render closable alert', async () => {
-    const { getByTestId, getByText, container, queryByText } = render(<Alert {...closeProps} />);
+    const { getByTestId, container, queryByText } = render(<Alert {...closeProps} />);
     expect(container.querySelector(".alert")).toHaveClass("alert-success");
     expect(queryByText('test')).toBeInTheDocument()
     // 模拟点击关闭图标
