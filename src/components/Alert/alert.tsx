@@ -45,4 +45,4 @@ Alert.defaultProps = {
   type: 'default'
 }
 
-export default Alert
+export default Alert;

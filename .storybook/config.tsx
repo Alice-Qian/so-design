@@ -1,5 +1,3 @@
-const fs = import("fs");
-console.log(fs)
 import { configure, addDecorator, addParameters } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 import React from "react";
