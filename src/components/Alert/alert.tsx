@@ -5,12 +5,12 @@ import Icon from "../Icon";
 export type AlertType = 'success' | 'default' | 'danger' | 'warning'
 
 export interface AlertProps {
-  className?: string,
-  title: string,
-  description?: string,
-  type?: AlertType,
-  onClose?: () => void,
-  closable?: boolean
+  className?: string;
+  title: string;
+  description?: string;
+  type?: AlertType;
+  onClose?: () => void;
+  closable?: boolean;
 }
 
 const Alert: FC<AlertProps> = (props) => {

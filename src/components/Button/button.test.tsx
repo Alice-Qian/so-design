@@ -8,7 +8,7 @@ const defaultProps = {
 
 const testProps: ButtonProps = {
   btnType:"primary",
-  size: 'lg',
+  btnSize: 'lg',
   className: 'klass'
 }
 
