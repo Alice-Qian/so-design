@@ -7,29 +7,35 @@
 //mixin
 @import "mixin";
 
-// animation
+//animation
 @import "animation";
 
 // button
 @import "../components/Button/style";
 
-// alert
+//alert
 @import "../components/Alert/style";
 
-// menu
+//menu
 @import "../components/Menu/style";
 
-// icon
-@import "../components/Icon/style"
+//tabs
+@import "../components/Tabs/style";
+
+//icon
+@import "../components/Icon/style";
+
+// //progress
+// @import "../components/Progress/style";
 
 // //input
 // @import "../components/Input/style";
 
-// //auto-complete
-// @import "../components/AutoComplete/style";
+// //select
+// @import "../components/Select/style";
 
-// //upload
+//Tag
+@import "../components/Tag/style";
+
+// //Upload
 // @import "../components/Upload/style";
-
-// //progress
-// @import "../components/Progress/style";

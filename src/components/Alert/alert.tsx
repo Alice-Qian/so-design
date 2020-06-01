@@ -1,54 +1,66 @@
-import React, { FC, useState } from 'react'
-import classNames from 'classnames'
+import React, { FC, useState } from "react";
+import classNames from "classnames";
 import Icon from "../Icon";
+import Transition from "../Transition";
 
-export type AlertType = 'success' | 'default' | 'danger' | 'warning'
+export type AlertType = "success" | "default" | "danger" | "warning";
 
 export interface AlertProps {
   /** Alert的自定义类名 */
   className?: string;
-   /** Alert的标题 必选属性 */
-   title: string;
-   /** Alert的描述 */
-   description?: string;
-   /** Alert的类型 */
-   type?: AlertType;
-   /** 关闭Alert */
-   onClose?: () => void;
-   /** 是否显示关闭图标 */
-   closable?: boolean;
+  /** Alert的标题 必选属性 */
+  title: string;
+  /** Alert的描述 */
+  description?: string;
+  /** Alert的类型 */
+  type?: AlertType;
+  /** 关闭Alert */
+  onClose?: () => void;
+  /** 是否显示关闭图标 */
+  closable?: boolean;
 }
 
 export const Alert: FC<AlertProps> = (props) => {
-  const [alertStatus, setAlertStatus] = useState<boolean>(true)
-  const { className, title, description, type, onClose, closable, ...restProps } = props
-  const classes = classNames('alert', className, {
+  const [alertStatus, setAlertStatus] = useState<boolean>(true);
+  const {
+    className,
+    title,
+    description,
+    type,
+    onClose,
+    closable,
+    ...restProps
+  } = props;
+  const classes = classNames("alert", className, {
     [`alert-${type}`]: type,
-  })
+  });
   const handleClose = (e: React.MouseEvent) => {
-    setAlertStatus(false)
+    setAlertStatus(false);
     if (onClose) {
-      onClose()
+      onClose();
     }
-  }
+  };
   return (
-    <>
-      {alertStatus &&
-        <div className={classes} {...restProps}>
-          {
-            closable && (<span className="alert-close-icon" onClick={handleClose} data-testid="icon">
-              <Icon size="xs" icon="times" />
-            </span>)
-          }
-          <p className="alert-title">{title}</p>
-          {description && <p className="alert-desc">{description}</p>}
-        </div>}
-    </>
-  )
-}
+    <Transition in={alertStatus} timeout={300} animation="zoom-in-top">
+      <div className={classes} {...restProps}>
+        {closable && (
+          <span
+            className="alert-close-icon"
+            onClick={handleClose}
+            data-testid="icon"
+          >
+            <Icon size="xs" icon="times" />
+          </span>
+        )}
+        <p className="alert-title">{title}</p>
+        {description && <p className="alert-desc">{description}</p>}
+      </div>
+    </Transition>
+  );
+};
 
 Alert.defaultProps = {
-  type: 'default'
-}
+  type: "default",
+};
 
 export default Alert;
