@@ -4,6 +4,8 @@ import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import "../src/styles/index.scss";
+// import stories from "./index"
+// console.log(stories)
 library.add(fas);
 
 const wrapperStyle: React.CSSProperties = {
@@ -31,9 +33,9 @@ addParameters({ info: { inline: true, header: false } });
 const loaderFn = () => {
   return [
     require("../src/components/Button/button.stories.tsx"),
-    // require("../src/components/Alert/alert.stories.tsx"),
+    require("../src/components/Alert/alert.stories.tsx"),
     // require("../src/components/Icon/icon.stories.tsx"),
-    // require("../src/components/Menu/menu.stories.tsx"),
+    require("../src/components/Menu/menu.stories.tsx"),
     // require("../src/components/Tabs/tabs.stories.tsx"),
     // require("../src/components/Progress/progress.stories.tsx"),
     // require("../src/components/Input/input.stories.tsx"),

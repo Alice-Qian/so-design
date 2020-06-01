@@ -5,15 +5,21 @@ import Icon from "../Icon";
 export type AlertType = 'success' | 'default' | 'danger' | 'warning'
 
 export interface AlertProps {
+  /** Alert的自定义类名 */
   className?: string;
-  title: string;
-  description?: string;
-  type?: AlertType;
-  onClose?: () => void;
-  closable?: boolean;
+   /** Alert的标题 必选属性 */
+   title: string;
+   /** Alert的描述 */
+   description?: string;
+   /** Alert的类型 */
+   type?: AlertType;
+   /** 关闭Alert */
+   onClose?: () => void;
+   /** 是否显示关闭图标 */
+   closable?: boolean;
 }
 
-const Alert: FC<AlertProps> = (props) => {
+export const Alert: FC<AlertProps> = (props) => {
   const [alertStatus, setAlertStatus] = useState<boolean>(true)
   const { className, title, description, type, onClose, closable, ...restProps } = props
   const classes = classNames('alert', className, {
@@ -28,7 +34,7 @@ const Alert: FC<AlertProps> = (props) => {
   return (
     <>
       {alertStatus &&
-        <div className={classes} >
+        <div className={classes} {...restProps}>
           {
             closable && (<span className="alert-close-icon" onClick={handleClose} data-testid="icon">
               <Icon size="xs" icon="times" />
