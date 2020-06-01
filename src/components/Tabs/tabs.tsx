@@ -60,7 +60,7 @@ const Tabs: FC<TabsProps> = ({
   };
   const renderContent = () => {
     return React.Children.map(children, (child, index) => {
-      return index == activeIndex && child;
+      return index === activeIndex && child;
     });
   };
   return (

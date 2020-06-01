@@ -18,7 +18,7 @@ const buttonWithType = () => (
     <Button btnType="primary"> primary button </Button>
     <Button btnType="danger"> danger button </Button>
     <Button btnType="link" href="https://www.baidu.com">
-      link button{" "}
+      link button
     </Button>
   </>
 );
