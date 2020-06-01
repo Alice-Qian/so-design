@@ -8,6 +8,7 @@ import classNames from "classnames";
 import { MenuContext } from "./menu";
 import { MenuItemProps } from "./menuItem";
 import Icon from "../Icon";
+import Transition from "../Transition";
 
 export interface SubMenuProps {
   index?: string;
@@ -62,16 +63,16 @@ export const SubMenu: FC<SubMenuProps> = (props) => {
         );
       }
     });
-    if (menuOpen) {
-      return <ul className={subMenuClasses}>{childrenComponent}</ul>;
-    } else {
-      return <></>;
-    }
+    return (
+      <Transition in={menuOpen} timeout={300} animation="zoom-in-top">
+        <ul className={subMenuClasses}>{childrenComponent}</ul>
+      </Transition>
+    );
   };
 
   return (
-    <li key={index} className={classes} {...clickEvents} {...hoverEvents}>
-      <div className="submenu-title">
+    <li key={index} className={classes} {...hoverEvents}>
+      <div className="submenu-title" {...clickEvents}>
         {title}
         <Icon icon="angle-down" className="arrow-icon" />
       </div>

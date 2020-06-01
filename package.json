@@ -28,6 +28,7 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-transition-group": "^4.4.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
