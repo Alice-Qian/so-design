@@ -39,7 +39,7 @@ const loaderFn = () => {
     require("../src/components/Tabs/tabs.stories.tsx"),
     // require("../src/components/Progress/progress.stories.tsx"),
     require("../src/components/Input/input.stories.tsx"),
-    // require("../src/components/AutoComplete/autoComplete.stories.tsx"),
+    require("../src/components/AutoComplete/autoComplete.stories.tsx"),
     // require("../src/components/Select/select.stories.tsx"),
     require("../src/components/Tag/tag.stories.tsx"),
     // require("../src/components/Upload/upload.stories.tsx"),

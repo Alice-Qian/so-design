@@ -10,6 +10,7 @@ import Icon from "../Icon";
 
 type InputSize = "lg" | "sm";
 
+// Omit 忽略[size]属性
 export interface InputProps
   extends Omit<HtmlHTMLAttributes<HTMLElement>, "size"> {
   disabled?: boolean;
